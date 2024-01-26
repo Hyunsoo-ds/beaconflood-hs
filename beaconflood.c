@@ -81,6 +81,7 @@ int main(int argc, char **argv){
         printf("idx: %d \n", idx);
 	}
 
+    free(frame);
 }
 
 void sendPacket(pcap_t *handle, struct BeaconFrame *p_bc){
