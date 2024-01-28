@@ -9,7 +9,7 @@
 
 const u_char MAC[6] = {0xf2, 0x1f, 0xf1, 0x33, 0x88, 0x50};
 const u_char temp_supported_rates[16] = {0x01, 0x08, 0x82, 0x84, 0x8b, 0x0c, 0x12, 0x96, 0x18,0x24,0x32,0x04,0x30,0x48,0x60,0x6c};
-const char* payload[PAYLOAD_LENGTH] = {"대상혁", "젠장 또 대상혁이야","밥 사주세요 멘토님","^오^b","더카페","젠장 또 대상혁이야","젠장 또 대상혁이야"};
+const char* payload[PAYLOAD_LENGTH] = {"AAAAAAAAAAAAAAA", "BBBBB","밥 사주세요 멘토님","^오^b","test","카라멜 마끼아또","CCCCCCCCCC"};
 
 struct RadioHeader{
 	u_char rad_rev;
@@ -74,7 +74,7 @@ int main(int argc, char **argv){
 
         setBeaconFrame(frame, payload[idx], temp_mac);
         sendPacket(handle,frame);
-        usleep(100000);
+        usleep(1000);
 
         idx ++;
         idx = idx % (sizeof(payload) / sizeof(char *));
